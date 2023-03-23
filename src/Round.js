@@ -8,11 +8,14 @@ class Round {
     this.incorrectGuesses = [];
     this.percentCorrect = "";
     this.guess = "";
+    this.dateOn = "";
+    this.timeOn = "";
+    this.dateOff = "";
+    this.timeOff = "";
+    this.timer = "";
   }
   returnCurrentCard() {
-    this.deck.splice(0, 1);
-    this.deck.push(this.currentCard);
-    this.currentCard = this.deck[0];
+    this.currentCard = this.deck[this.turns];
     return this.currentCard;
   }
   takeTurn(guess)  {
@@ -21,11 +24,10 @@ class Round {
     if (currentTurn.evaluateGuess() === false) {
       this.incorrectGuesses.push(`${this.currentCard.id}: ${currentTurn.guess}`);
     }
+    
     var feedback = currentTurn.giveFeedback();
-
     this.calculatePercentCorrect();
     this.returnCurrentCard();
-
     return feedback;
   }
   calculatePercentCorrect() {
@@ -33,8 +35,23 @@ class Round {
     var percent = (decimal * 100).toFixed(2);
     this.percentCorrect = `${percent}%`;
   }
+  calculateTimer() {
+    var difference = (this.timeOff - this.timeOn);
+    var milliseconds = difference; 
+    var hours = Math.floor(milliseconds / 1000 / 60 / 60);
+    milliseconds -= (hours * 1000 * 60 * 60);
+    var minutes = Math.floor(milliseconds / 1000 / 60 )
+    milliseconds -= (minutes * 1000 * 60);
+    var seconds = Math.floor(milliseconds / 1000)
+    milliseconds -= (seconds * 1000);
+    this.timer = (`${minutes} minutes and ${seconds} seconds!`)
+    return this.timer;
+  }
   endRound()  {
-    console.log(`**Round over!** You answered ${this.percentCorrect} of the questions correctly!`)
+    this.dateOff = new Date;
+    this.timeOff = this.dateOff.getTime();
+    this.calculateTimer();
+    console.log(`**Round over!** You answered ${this.percentCorrect} of the questions correctly in ${this.timer}!`)
   }
 }
 

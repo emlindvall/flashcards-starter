@@ -3,7 +3,7 @@ const prototypeQuestions = data.prototypeData;
 const util = require('./util');
 
 const Card = require('../src/Card');
-const Turn = require('../src/Turn');
+// const Turn = require('../src/Turn');
 const Deck = require('../src/Deck');
 const Round = require('../src/Round');
 
@@ -27,6 +27,8 @@ class Game {
     });
   }
   start() {
+    this.currentRound.dateOn = new Date;
+    this.currentRound.timeOn = this.currentRound.dateOn.getTime();
     this.createCards();
     this.printMessage(this.deck, this.currentRound);
     this.printQuestion(this.currentRound);
