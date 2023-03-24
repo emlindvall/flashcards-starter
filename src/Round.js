@@ -45,7 +45,6 @@ class Round {
     var seconds = Math.floor(milliseconds / 1000)
     milliseconds -= (seconds * 1000);
     this.timer = (`${minutes} minutes and ${seconds} seconds!`)
-    console.log(this.timer);
     return this.timer;
   }
   endRound()  {

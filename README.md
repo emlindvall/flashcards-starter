@@ -1,71 +1,57 @@
-# FlashCards Starter Kit
+<!-- Abstract at the top (A sentence or two describing the project)
+A GIF of the working application
+Technologies used
+Install/Setup instructions -->
 
-## Fork This Repo
+![hg-logo](assets/hg-logo.png "hunger games logo") 
+![turing-logo](assets/turing-logo.png "turing logo") 
+![hg-logo](assets/hg-logo.png "hunger games logo") 
 
-On the top right corner of this page, click the **Fork** button.
+# THE FLASHCARDS GAME
 
-## Setup
+## About
 
-Clone down the forked repo (from your GitHub). Since you don't want to name your project "flashcards-starter", you can use an optional argument when you run `git clone` (you replace the `[...]` with the terminal command arguments):
+Do you volunteer as Mod 2 tribute? 
 
-```bash
-git clone [remote-address] [what you want to name the repo]
-```
-
-Once you have cloned the repo, change into the directory and install the library dependencies. Run:
-
-```bash
-npm install
-```
-
-To verify that it is setup correctly, run `npm test` in your terminal. You should have 5 pending tests in your `Card` test file that show up.
-
-Running `node index.js` from the root of your project should result in the following message being displayed in your terminal: 
-
-```bash
-Your project is running...
-```
-
-*Note that you will not need to you run your server until you are instantiating your `Game` class in Iteration 3. Prior to that, you should be using TDD to drive your code. You should check the functionality of your application by running your tests via `npm test`.*
-
-
-## Where to Add Your Code
-
-### JavaScript
-
-**Create all of your feature code files in the `src` directory.**
-
-We will be using the `module.exports` and `require` syntax to share code across files.
-
-## How to View Your Code in Action
-
-Once you are working through Iteration 3, you will want to start your server to test your functionality.
-In the terminal, run:
-
-```bash
-node index.js
-```
-
-When the game is functioning appropriately, you will be prompted for each question, have the opportunity to select an answer, and will be given feedback. You will be able to play through the entire deck of cards:
-
-![flash cards example gif](https://media.giphy.com/media/1zkb1q58eTiTH6D7wc/giphy.gif)
+Flashcards is a command line minigame designed to help aspring software developers study basic front end JavaScript theory aligned with the [Mod 2](https://frontend.turing.edu/lessons/) curriculum at [Turing School of Software and Design](https://frontend.turing.edu/). This minigame application is playable via the terminal and features 30 multiple-choice style questions related to iterator methods. After cycling through all 30 flashcards, users will receive statistics about their performance. May the odds be ever in your favor! 
 
 ---
 
-## Test Files Organization
+## Set Up 
 
-Similar to feature code, your test code needs to be put in a specific place for it to run successfully.
+> ### Installing the files
+> - Fork this [repository](https://github.com/emlindvall/flashcards-starter) to your GitHub account. 
+> - In your forked respository, click the `code` drop-down menu and copy the SSH key.
+> - On your local machine, open the terminal using  `⌘ + space` and navigate to the location you'd like the flashcards repository directory cloned to. 
+> - Once you're there, run `git clone [SSH Key] [theFlashcardsGame]` via the command line.
+> - Run `npm install`.
 
-**Put all of your test files in the `test` directory.** As a convention, all test filenames should end with `-test.js`. For instance: `Round-test.js`.
+> ### Playing the game
+> - When you're reading to play, open the terminal and navigate to theFlashcardsGame.
+> - Run `node index.js` via the command line.
+> - When the first flashcard appears, use your keyboard arrows and your enter key to select and submit your answer. 
+> - Looking to improve your odds? You can replay anytime by running `node index.js` again. 
 
-## Running Your Tests
+---
 
-Run your test suite using the command:
+## Preview
 
-```bash
-npm test
-```
-
-The test results will output to the terminal.
+![Gameplay](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExYTZhOWQxNTU5ZjdiNTljZDEzNjA5MmM5YzcwZTIyNjhjMDEwZmJmNiZjdD1n/yLgKZ9KxnahBQsL1Gr/giphy.gif) 
 
 
+> ![statistics](assets/statistics.png "statistics screenshot") 
+
+---
+
+## Contributors
+The structure of this application is the result of a collaboration between Em Lindvall  [GitHub](https://github.com/emlindvall) | [LinkedIn](https://www.linkedin.com/in/emilylindvall/) and the Turing School instructors, who provided the foundational dataset and starter implementation code. 
+
+---
+
+## Context
+I made this application during my time as a Mod 2 student in the [Turing School of Software and Design Front End Web Development program](https://frontend.turing.edu/), a four- module, seven-month course focused on preparing students for a career as web developers working with Javascript, HTML, CSS, and the React framework. I began the program in January 2023, and am expected to graduate in August 2023. The application was built over the course of four days, and completed with the [Project Specification and Rubric](https://frontend.turing.edu/projects/flash-cards.html) in mind.
+
+---
+
+## Goals
+The primary goals of this project was to continue growing and strengthening my understanding of Javascript code, particularly in regards to class to class interactions, as well as to practice manipulating and adding to a pre-existing dataset built by other developers. The secondary goal was to create a fully-functional application that met all of the project requirements in terms of design, usability, and DRYness. To meet these goals, I utilized test-driven development strategies to write fully-functional JavaScript implementation code, and researched new functionalities via websites like Mozilla Developer Network, Stack Overflow, and W3 along the way.
