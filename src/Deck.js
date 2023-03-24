@@ -7,6 +7,7 @@ class Deck {
     this.cards.forEach((cards) => {
       this.countedCards = (this.countedCards +1);
     });
+    return this.countedCards;
   }
 }
 

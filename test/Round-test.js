@@ -16,8 +16,11 @@ describe('Round', function() {
     card1 = new Card(1, 'What is Robbie\'s favorite animal', ['sea otter', 'pug', 'capybara'], 'sea otter');
     card2 = new Card(14, 'What organ is Khalid missing?', ['spleen', 'appendix', 'gallbladder'], 'gallbladder');
     card3 = new Card(12, 'What is Travis\'s middle name?', ['Lex', 'William', 'Fitzgerald'], 'Fitzgerald');
+
+    // add another card
+    card4 = new Card(16, 'What kind of pizza is objectively the best?', ['Pepperoni', 'Supreme', 'Hawaiian'], 'Hawaiian');
    
-    deck = new Deck([card1, card2, card3]);
+    deck = new Deck([card1, card2, card3, card4]);
     round = new Round(deck);
     });
 
@@ -59,7 +62,7 @@ it('should be able to calculate percent correct', function()  {
   round.takeTurn('capybara');
   round.takeTurn('giant african snail');
   round.takeTurn('sea slug');
-  round.takeTurn('sea otter');
+  round.takeTurn('Hawaiian');
 
   expect(round.percentCorrect).to.equal('25.00%');
 });
@@ -68,10 +71,16 @@ it('should be able to end a round', function()  {
   round.takeTurn('capybara');
   round.takeTurn('giant african snail');
   round.takeTurn('sea slug');
-  round.takeTurn('sea otter');
+  round.takeTurn('Hawaiian');
 
   round.endRound();
 
   expect(round.endRound).to.be.a('function');
+});
+
+it('should be able to store a timer value', function()  {
+  round.calculateTimer();
+
+  expect(round.calculateTimer()).to.equal(round.timer);
 });
 });
