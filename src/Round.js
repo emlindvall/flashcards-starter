@@ -45,13 +45,15 @@ class Round {
     var seconds = Math.floor(milliseconds / 1000)
     milliseconds -= (seconds * 1000);
     this.timer = (`${minutes} minutes and ${seconds} seconds!`)
+    console.log(this.timer);
     return this.timer;
   }
   endRound()  {
     this.dateOff = new Date;
     this.timeOff = this.dateOff.getTime();
     this.calculateTimer();
-    console.log(`**Round over!** You answered ${this.percentCorrect} of the questions correctly in ${this.timer}!`)
+    var stats = (`**Round over!** You answered ${this.percentCorrect} of the questions correctly in ${this.timer}!`)
+    console.log(`${stats}`);
   }
 }
 

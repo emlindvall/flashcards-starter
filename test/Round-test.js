@@ -77,4 +77,10 @@ it('should be able to end a round', function()  {
 
   expect(round.endRound).to.be.a('function');
 });
+
+it('should be able to store a timer value', function()  {
+  round.calculateTimer();
+
+  expect(round.calculateTimer()).to.equal(round.timer);
+});
 });
